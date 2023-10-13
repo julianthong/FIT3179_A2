@@ -16,25 +16,25 @@
           "url": "data/normalized_energy-intensity.csv" 
         },
         "key": "Entity", 
-        "fields": ["Normalized"]
+        "fields": ["Primary energy consumption per GDP (kWh/$)"]
       }
     },
     {
       "bin": true,  
       "field": "Normalized",
-      "as": "NormalizedBins" 
+      "as": "Primary energy consumption per GDP (kWh/$)" 
     }
   ],
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
-      "field": "NormalizedBins", 
+      "field": "Primary energy consumption per GDP (kWh/$)", 
       "type": "ordinal", 
-      "scale": {"scheme": "viridis"} 
+      "scale": {"scheme": "lightgreyred"} 
     },
     "tooltip": [
       {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-      {"field": "Normalized", "type": "quantitative", "title": "Normalized Energy Intensity"}
+      {"field": "Primary energy consumption per GDP (kWh/$)", "type": "quantitative", "title": "Primary energy consumption per GDP (kWh/$)"}
     ]
   }
 }

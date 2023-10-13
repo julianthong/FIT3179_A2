@@ -26,9 +26,7 @@
 
     <!-- CSS file -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
-    <style>
-
-    </style>
+    <style></style>
   </head>
 
   <body>
@@ -39,18 +37,20 @@
         World Energy Consumption
       </h1>
       <!-- pure grid group -->
-      <div style="text-align: center;" class = "text-1-border">
+      <div style="text-align: center" class="text-1-border">
         <p>
-          Energy plays a big part in daily life of humanity. In order to strive for a more sustainable future where everyone has equal access to clean and safe energy, we
-          first have to understand the problems and issues with current energy consumption. 
-          This visualisation aims to provide a better understanding of the current energy consumption of the world. 
+          Energy plays a big part in daily life of humanity. In order to strive
+          for a more sustainable future where everyone has equal access to clean
+          and safe energy, we first have to understand the problems and issues
+          with current energy consumption. This visualisation aims to provide a
+          better understanding of the current energy consumption of the world.
         </p>
       </div>
-      <div class = "pure-g">
-        <div class = "pure-u-1-2">
+      <div class="pure-g">
+        <div class="pure-u-1-2">
           <div id="vis2" class="vis-container"></div>
         </div>
-        <div class = "pure-u-1-2">
+        <div class="pure-u-1-2">
           <div id="vis3" class="vis-container"></div>
         </div>
       </div>
@@ -60,11 +60,19 @@
         <div class="pure-u-1-2">
           <div class="l-box">
             <div class="description">
-              <h2>World GDP per capita </h2>
-              <p class = "text-para">
-                This section explores the relationship between a countries wealth and its energy consumption.
-                Countries with higher GDP such as the United States consume more electicity than lower GDP countries such as India with a ratio of 12. To put in perspective, the average Indian consumes the same amount of electicity in a month than the average American does in a Year.<br>
-                <br>Additionally, the poorest contries in the world consumed so little energy that they were not included in the dataset. As such, providing affordable energy is a key factor these countries
+              <h2>World GDP per capita</h2>
+              <p class="text-para">
+                This section explores the relationship between a countries
+                wealth and its energy consumption. Countries with higher GDP
+                such as the United States consume more electicity than lower GDP
+                countries such as India with a ratio of 12. To put in
+                perspective, the average Indian consumes the same amount of
+                electicity in a month than the average American does in a
+                Year.<br />
+                <br />Additionally, the poorest contries in the world consumed
+                so little energy that they were not included in the dataset. As
+                such, providing affordable energy is a key factor these
+                countries
               </p>
             </div>
           </div>
@@ -75,14 +83,41 @@
       </div>
       <!-- end pure grid group -->
 
+      <!-- pure grid group -->
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div id="vis4"></div>
+        </div>
+        <div class="pure-u-1-2">
+          <div class="l-box">
+            <div class="description">
+              <h2>World GDP per capita</h2>
+              <p class="text-para">
+                This section explores the relationship between a countries
+                wealth and its energy consumption. Countries with higher GDP
+                such as the United States consume more electicity than lower GDP
+                countries such as India with a ratio of 12. To put in
+                perspective, the average Indian consumes the same amount of
+                electicity in a month than the average American does in a
+                Year.<br />
+                <br />Additionally, the poorest contries in the world consumed
+                so little energy that they were not included in the dataset. As
+                such, providing affordable energy is a key factor these
+                countries
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- end pure grid group -->
+
       <!-- end page -->
       <!-- end pure grid group -->
 
       <div class="pure-g">
         <div class="pure-u-1-1 small-font">
-          <p>
-            
-          </p>
+          <p></p>
         </div>
       </div>
     </div>
@@ -92,6 +127,7 @@
       var specVis1 = "bubble_plot.vg.json";
       var specVis2 = "energy_choropleth_map.json";
       var specVis3 = "line_graph.vg.json";
+      var specVis4 = "low_energy_map.vg.json";
 
       vegaEmbed("#vis1", specVis1, { actions: false });
 
@@ -120,7 +156,16 @@
           // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         })
         .catch(console.error);
+      // end of line graph
 
+      //Low energy map 
+      vegaEmbed("#choropleth_map", specVis4, { actions: false });
+      vegaEmbed("#vis4", specVis4, { actions: false })
+        .then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        })
+        .catch(console.error);
+      // end of line graph
     </script>
   </body>
 </html>

@@ -30,7 +30,8 @@
     "color": {
       "field": "Primary energy consumption per GDP (kWh/$)", 
       "type": "ordinal", 
-      "scale": {"scheme": "lightgreyred"} 
+      "scale": {"scheme": "lightgreyred"},
+      "legend":null 
     },
     "tooltip": [
       {"field": "properties.NAME", "type": "nominal", "title": "Country"},

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Worldwide Energy Consumption",
+  "data": {
+    "url": "data/line-world.csv"
+  },
+  "vconcat": [
+    
+    {
+      "width": 480,
+      "height": 240,
+      "mark": "area",
+      "encoding": {
+        "x": { "field": "Year", "type": "temporal",
+        "scale": {"domain": {"param": "brush"}},
+        "axis": { "title": "" } },
+        "y": { "field": "Energy", "type": "quantitative" }
+      }
+    },
+    {
+      "width": 480,
+      "height": 60,
+      "mark": "line",
+      "params": [
+        {"name": "brush", "select": {"type": "interval",
+        "encodings": ["x"]}}
+        ],
+        
+      "encoding": {
+        "x": { "field": "Year", "type": "temporal" },
+        "y": {
+          "field": "Energy",
+          "type": "quantitative",
+          "axis": { "tickCount": 3, "grid": false }
+        }
+      }
+    }
+  ]
+}

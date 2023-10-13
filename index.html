@@ -93,22 +93,27 @@
             <div class="description">
               <h2>World GDP per capita</h2>
               <p class="text-para">
-                This section explores the relationship between a countries
-                wealth and its energy consumption. Countries with higher GDP
-                such as the United States consume more electicity than lower GDP
-                countries such as India with a ratio of 12. To put in
-                perspective, the average Indian consumes the same amount of
-                electicity in a month than the average American does in a
-                Year.<br />
-                <br />Additionally, the poorest contries in the world consumed
-                so little energy that they were not included in the dataset. As
-                such, providing affordable energy is a key factor these
-                countries
+                Several nations made significant
+                strides in transitioning to cleaner energy sources. China
+                maintained its position as the world's largest producer of low
+                carbon energy, driven by a robust renewable energy sector, while
+                the United States continued to expand its renewable capacity.
+                Europe, collectively, saw an impressive surge in low carbon
+                energy shares, with countries like Germany and Denmark leading
+                the charge with substantial investments in wind and solar power.
+                India accelerated its adoption of renewables, diversifying its
+                energy mix and reducing its reliance on coal.
+                
+                <br/><br/>Developing nations
+                in Africa also made notable advancements, emphasizing access to
+                sustainable energy sources. As nations worked towards reducing
+                their carbon footprints, global efforts in 2022 demonstrated a
+                shift towards a more sustainable and cleaner energy future.
+
               </p>
             </div>
           </div>
         </div>
-
       </div>
       <!-- end pure grid group -->
 
@@ -158,7 +163,7 @@
         .catch(console.error);
       // end of line graph
 
-      //Low energy map 
+      //Low energy map
       vegaEmbed("#choropleth_map", specVis4, { actions: false });
       vegaEmbed("#vis4", specVis4, { actions: false })
         .then(function (result) {

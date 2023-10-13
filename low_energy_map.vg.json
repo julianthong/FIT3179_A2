@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Low Carbon Energy Shares by Country (2022)",
-    "width": 800,
+    "width": 770,
     "height": 400,
     "projection": {"type": "equalEarth"},
     "data": {
@@ -31,7 +31,8 @@
         "field": "Electricity",
         "title" : "Shares (%)",
         "type": "quantitative",
-        "scale": {"type": "threshold", "domain": [10, 20, 30, 40, 50], "scheme": "viridis"}
+        "scale": {"type": "threshold", "domain": [10, 20, 30, 40, 50], "scheme": "greens"},
+        "legend": {"orient": "bottom-left"}
       },
       "tooltip": [
         {"field": "properties.NAME", "type": "nominal", "title": "Country"},

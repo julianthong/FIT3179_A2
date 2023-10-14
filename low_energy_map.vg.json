@@ -11,6 +11,16 @@
     },
     "layer":[   
       {
+        "transform": [
+          {
+            "calculate": "'Data is not available in ' + datum.properties.NAME",
+            "as": "note"
+          }
+        ],
+        "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+        "encoding": {"tooltip": {"field": "note"}}
+      },
+      {
         "data": {
           "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
           "format": {"type": "topojson", "feature": "oceans"}
@@ -50,7 +60,7 @@
           "field": "Electricity",
           "title" : "Shares (%)",
           "type": "quantitative",
-          "scale": {"type": "threshold", "domain": [10, 20, 30, 40, 50], "scheme": "greens"},
+          "scale": {"type": "threshold", "domain": [20, 40, 60, 80], "scheme": "greens"},
           "legend": {"orient": "bottom-left"}
         },
         "tooltip": [
@@ -58,6 +68,33 @@
           {"field": "Electricity", "type": "quantitative", "title": "Low-carbon Electricity (%)"}
         ]
       }
-    }
+    },
+        {
+          "transform": [
+            {
+              "lookup": "properties.NAME",
+              "from": {
+                "data": {
+                  "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/data/countryInfo.csv"
+                },
+                "key": "name",
+                "fields": ["latitude", "longitude"]
+              }
+            }
+          ],
+          "mark": {"type": "text"},
+          "encoding": {
+            "longitude": {"field": "longitude", "type": "quantitative"},
+            "latitude": {"field": "latitude", "type": "quantitative"},
+            "text": {"field": "properties.NAME", "type": "nominal"},
+            "opacity": {
+              "condition": {
+                "test": "datum['properties.NAME'] == 'China' || datum['properties.NAME'] == 'Brazil' || datum['properties.NAME'] == 'Australia' || datum['properties.NAME'] == 'Malaysia' ||  datum['properties.NAME'] == 'Yemen' ||  datum['properties.NAME'] == 'United States of America'",
+                "value": 1
+              },
+              "value": 0
+            }
+          }
+        }
     ]
   }

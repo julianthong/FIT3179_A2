@@ -19,6 +19,7 @@
         "fields": ["Primary energy consumption per GDP (kWh/$)"]
       }
     },
+    
     {
       "bin": true,  
       "field": "Normalized",

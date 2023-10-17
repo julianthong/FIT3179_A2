@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Global Primary Energy Consumption by Source",
+  "width": 500, "height": 300,
+  "data": {"url": "data/reshaped_data.csv"},
+  "mark": "area",
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "temporal",
+      "timeUnit": "year",
+      "axis": {"tickCount": 10, "format": "%Y"},
+      "title": "Year"
+    },
+    "y": {
+      "aggregate": "sum", "field": "TWh", "title": "Total TWh"
+    },
+    "color": {
+      "field": "Source",
+      "scale": {"scheme": "category20"}
+    },
+    "tooltip": [
+      {"field": "Year", "type": "temporal", "title": "Year"},
+      {"field": "TWh", "type": "quantitative", "title": "Total TWh"},
+      {"field": "Source", "type": "nominal", "title": "Source"}
+    ],
+    "legend": {
+      "sort": {"field": "TWh", "order": "descending"}
+    }
+  }
+}

@@ -24,3 +24,15 @@
 	font-size: large;
 	line-height: 1.5;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 750px 500px;
+    grid-gap: 100px;
+}
+
+.outer{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}

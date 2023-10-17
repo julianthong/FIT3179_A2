@@ -36,3 +36,20 @@
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 }
+  /* Style for the container holding the two elements */
+  .container {
+	display: flex; /* Use flexbox for layout */
+	justify-content: space-between; /* Space elements evenly */
+}
+
+/* Style for the left element */
+#linegraph {
+	width: 48%; /* Adjust the width as needed */
+	padding: 10px; /* Add padding for spacing */
+}
+
+/* Style for the right element */
+#radialchart {
+	width: 48%; /* Adjust the width as needed */
+	padding: 10px; /* Add padding for spacing */
+}

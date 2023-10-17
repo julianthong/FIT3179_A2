@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+  <!-- Change Tab title -->
+<title>World Energy Consumption</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+        font-family: "Times New Roman", Times, serif;
+    }
+</style> <style>
+
+</style>
+
+</head>
+<body>
+
+<div class="homepage"><div class="container">
+  <div id="linegraph">
+      <!-- Content for the left element goes here -->
+      Line Graph Content
+  </div>
+  <div id="radialchart">
+      <!-- Content for the right element goes here -->
+      Radial Chart Content
+  </div>
+</div>
+    
+  <div class="pure-u-1-1" style="text-align: center; margin-top: 50px;">
+    <h1 id="map">World Energy Consumption</h1>
+    <div style="text-align: center" class="text-1-border">
+        <p>
+          Energy plays a big part in daily life of humanity. In order to strive
+          for a more sustainable future where everyone has equal access to clean
+          and safe energy, we first have to understand the problems and issues
+          with current energy consumption. This visualisation aims to provide a
+          better understanding of the current energy consumption of the world.
+        </p>
+      </div>
+    <div id="equalEqarth_map" style="display: contents;"></div>
+  </div>
+
+  <div class="description description" style="top: 50px; padding: 50px; text-align: center;">
+    <p>
+      It visualizes the total electricity consumption around the world. 
+      In this visualization, there is color hue used for the color choice. 
+      When the country consumes less electricity, then the color will be in light green. 
+      Likewise, the higher the electricity consumption, the darker the color it has such as from 
+      yellow to dark red.
+      In this idiom, there is high electricity consumption in 
+      <span style="color: #900C3F; font-size: large;"><b>United States, Canada and Australia</b></span>. 
+      Let's explore why these country have higher electricity consumption than other countries.
+    </p>
+  </div>
+  <br>
+
+  <div class="pure-g" style="top: 100px; padding: 60px; justify-content: space-around; background-color: white;">
+    <div class="pure-u-1-3" style="width: 30%;">
+      <div class="description description-left">
+        <div class="title-box"  id="GDP">
+          <h2>Global Electricity Consumption per Country</h2>
+        </div>
+        <p>
+          Let's find out how electricity consumption can affects the GDP per capita as well as the population by country.
+          This scatterplot visualise the relationship between total electricity consumption and  GDP per capita.
+          The higher the GDP per capita, the higher the total electricity consumption it takes. In this visualisation, 
+          <span style="color: #e41a1c; font-size: large;"><b>United States</b></span> is the first-highest electricity consumption that consumes 1,013 Terawtt electricity which is double 
+          to <span style="color: #984ea3; font-size: large;"><b>Russia</b></span>. However,many countries in 
+            <span style="color: #ff7f00; font-size: large;"><b>Africa</b></span> are experiencing lacks of 
+          electricity consumption with low GDP per capita. 
+        </p>
+      </div>
+    </div>
+
+  </div>
+  <br>
+
+  <div class="pure-g" style="top: 100px; padding: 60px; justify-content: space-around; background-color: white;">
+    <div class="pure-u-1-3" style="width: 30%;">
+      <div class="description description-left">
+        <div class="title-box"  id="GDP">
+          <h2>Global Electricity Consumption per Country</h2>
+        </div>
+        <p>
+          Let's find out how electricity consumption can affects the GDP per capita as well as the population by country.
+          This scatterplot visualise the relationship between total electricity consumption and  GDP per capita.
+          The higher the GDP per capita, the higher the total electricity consumption it takes. In this visualisation, 
+          <span style="color: #e41a1c; font-size: large;"><b>United States</b></span> is the first-highest electricity consumption that consumes 1,013 Terawtt electricity which is double 
+          to <span style="color: #984ea3; font-size: large;"><b>Russia</b></span>. However,many countries in 
+            <span style="color: #ff7f00; font-size: large;"><b>Africa</b></span> are experiencing lacks of 
+          electricity consumption with low GDP per capita. 
+        </p>
+      </div>
+    </div>
+    <div class="pure-u-2-3" style="text-align: right;">
+      <div id="bubbleplot"></div>
+    </div>
+  </div>
+  <br>
+
+  <div class="pure-g" style="top: 100px; padding: 60px; justify-content: space-around;">
+    <div class="pure-u-2-3" style="text-align: left;">
+      <div id="linegraph"></div>
+    </div>
+
+    <div class="pure-u-2-3" style="text-align: right;">
+      <div id="radialchart"></div>
+    </div>
+    </div>
+  </div>
+  <br>
+
+  <div class="pure-g" style="top: 100px; padding: 60px; justify-content: space-around; background-color: white;">
+    <div class="pure-u-1-3" style="width: 30%; ">
+        <div class="description description-left">
+          <div class="title-box" id="coal">
+            <h2>Country Rank on Coal Electricity Consumption per years </h2>
+          </div>
+          <p>
+            This bump chart visualizes the country ranking on coal electricity consumption on years.
+            The ranking is only obtained from the top 8 country. In this chart, developed countries
+            like 
+            <span style="color: grey; font-size: large;"><b>United States</b></span>, 
+            <span style="color: orange; font-size: large;"><b>China</b></span>,
+            <span style="color: green; font-size: large;"><b>India</b></span> 
+            remains the top 3 that consume a lot of electricity created by coal
+            in 20th century. On the other hand, there is fluctuation on the ranking for countries 
+            <span style="color: rgb(75, 132, 197); font-size: large;"><b>Australia</b></span> and 
+            <span style="color: #32612D; font-size: large;"><b>Russia</b></span>
+            over the years. However, there is a rise on the rank of 
+            <span style="color: rgb(108, 184, 196); font-size: large;"><b>South Africa</b></span>.
+            In 2016, 
+            South Korea 
+            has the sixth-largest
+            coal electricity consumption in the world compare to 2001 which is only in rank 11.
+          </p>
+        </div>
+      </div>
+      <div class="pure-u-2-3" style="text-align: right;">
+        <div id="low_energymap">
+        </div>
+      </div>
+  </div>
+  <br>
+
+  <div style="text-align: center; padding: 10px; background-color: black; color: white;">
+    <h5>Created by Julian Thong Joon Yip (2023)</h5>
+
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+  var spec1 = "energy_choropleth_map.vg.json"
+  var spec2 = "bubble_plot.vg.json";
+  var spec3 = "new_radial.vg.json"
+  var spec4 = "line_graph.vg.json"
+  var spec5 = "low_energy_map.vg.json";
+
+
+  vegaEmbed('#equalEqarth_map', spec1, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#bubbleplot', spec2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#radialchart', spec3, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#linegraph', spec4, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#low_energymap', spec5, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+</script>
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+</body>
+</html>

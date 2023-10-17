@@ -1,0 +1,78 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Electricity Source Distribution ",
+  "data": {
+    "url": "data/share-electricity-source-facet.csv"
+  },
+  "params": [
+    {
+      "name": "Continent_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          "World",
+          "Malaysia",
+          "Australia",
+          "United States of America",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "labels": [
+          "World",
+          "Malaysia",
+          "Australia",
+          "United States",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "name": "Location: "
+      }
+    }
+  ],
+
+  "transform": [
+    {
+        "filter": "Continent_selection == null || datum.Entity == Continent_selection"},
+    {
+      "fold": [
+        "Coal (% electricity)", 
+        "Gas (% electricity)",
+        "Nuclear (% electricity)",
+        "Hydro (% electricity)",
+        "Solar (% electricity)",
+        "Wind (% electricity)"
+      ]
+    }
+  ],
+  "layer": [
+    {
+      "mark": { "type": "arc", "innerRadius": 0, "outerRadius": 100 },
+      "encoding": {
+        "theta": { "field": "key", "type": "nominal" },
+        "radius": { "field": "value", "type": "quantitative" },
+        "tooltip": [
+          { "field": "key", "type": "nominal", "title": "Source" },
+          { "field": "value", "type": "quantitative", "title": "Percentage" }
+        ]
+      }
+    },
+    {
+      "mark": { "type": "text" },
+      "encoding": {
+        "text": { "field": "key", "type": "nominal" },
+        "radius": { "value": 120 }
+      }
+    }
+  ],
+  "encoding": {
+    "theta": { "field": "key", "type": "nominal" },
+    "radius": {
+      "field": "value",
+      "scale": { "type": "sqrt", "zero": true, "rangeMin": 20 }
+    },
+    "color": { "field": "key", "type": "nominal", "legend": null }
+  }
+}

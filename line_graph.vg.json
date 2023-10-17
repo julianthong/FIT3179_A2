@@ -43,6 +43,7 @@
       "width": 480,
       "height": 60,
       "mark": "line",
+      "title": "Year Brush filter",
       "params": [
         {
           "name": "brush",

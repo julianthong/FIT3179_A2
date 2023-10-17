@@ -1,31 +1,64 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Global Primary Energy Consumption by Source",
-  "width": 500, "height": 300,
+  "width": 500,
+  "height": 300,
   "data": {"url": "data/reshaped_data.csv"},
-  "mark": "area",
-  "encoding": {
-    "x": {
-      "field": "Year",
-      "type": "temporal",
-      "timeUnit": "year",
-      "axis": {"tickCount": 10, "format": "%Y"},
-      "title": "Year"
-    },
-    "y": {
-      "aggregate": "sum", "field": "TWh", "title": "Total TWh"
-    },
-    "color": {
-      "field": "Source",
-      "scale": {"scheme": "category20"}
-    },
-    "tooltip": [
-      {"field": "Year", "type": "temporal", "title": "Year"},
-      {"field": "TWh", "type": "quantitative", "title": "Total TWh"},
-      {"field": "Source", "type": "nominal", "title": "Source"}
-    ],
-    "legend": {
-      "sort": {"field": "TWh", "order": "descending"}
+  "layer": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "timeUnit": "year",
+          "axis": {"tickCount": 10, "format": "%Y"},
+          "title": "Year"
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "TWh",
+          "title": "Total TWh"
+        },
+        "color": {
+          "field": "Source",
+          "scale": {"scheme": "category20"}
+        },
+        "tooltip": [
+          {"field": "Year", "type": "temporal", "title": "Year"},
+          {"field": "TWh", "type": "quantitative", "title": "Total TWh"},
+          {"field": "Source", "type": "nominal", "title": "Source"}]
+        },
+        "legend": {
+          "sort": {"field": "TWh", "order": "descending"}
+        }
+      },
+    {
+      "mark": "text",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "timeUnit": "year",
+          "title": "Year",
+          "condition": {"test":"datum.Year == 1980"}
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "TWh",
+          "title": "Total TWh",
+          "condition": {"test":"datum.Year == 1980", "value":  10, "aggregate": "sum", "field": "TWh", "title": "Total TWh"}
+        },
+        "text": {"value": "New source added"},  
+        "align": {"value": "left"},  
+        "baseline": {"value": "middle"},  
+        "color": {"value": "black"},
+        "opacity":{"condition": {
+          "test": "datum['Year'] == 'Jan 01, 1984' ",
+          "value": 1
+          },
+          "value": 0
+          }
+      }
     }
-  }
+  ]
 }

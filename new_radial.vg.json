@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Primary energy consumption by source",
-  "width": 600,
+  "width": 500,
   "height": 300,  
   "data": {
     "url": "data/per-capita-energy-stacked.csv"

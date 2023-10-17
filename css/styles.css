@@ -42,14 +42,17 @@
 	justify-content: space-between; /* Space elements evenly */
 }
 
-/* Style for the left element */
+
 #linegraph {
-	width: 48%; /* Adjust the width as needed */
-	padding: 10px; /* Add padding for spacing */
+	width: 48%; 
+	padding: 10px; 
 }
 
 /* Style for the right element */
 #radialchart {
-	width: 48%; /* Adjust the width as needed */
-	padding: 10px; /* Add padding for spacing */
+	width: 48%; 
+	padding: 10px; 
 }
+
+
+

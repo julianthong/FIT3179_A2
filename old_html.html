@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FIT3179 A2</title>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <!-- Import pure.css -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+      integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ"
+      crossorigin="anonymous"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+    <style></style>
+  </head>
+
+  <body>
+    <div class="page">
+      <h1
+        style="text-align: center; font-family: 'Times New Roman', sans-serif"
+      >
+        World Energy Consumption
+      </h1>
+      <!-- pure grid group -->
+      <div style="text-align: center" class="text-1-border">
+        <p>
+          Energy plays a big part in daily life of humanity. In order to strive
+          for a more sustainable future where everyone has equal access to clean
+          and safe energy, we first have to understand the problems and issues
+          with current energy consumption. This visualisation aims to provide a
+          better understanding of the current energy consumption of the world.
+        </p>
+      </div>
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div id="vis2" class="vis-container"></div>
+        </div>
+        <div class="pure-u-1-2">
+          <div id="vis3" class="vis-container"></div>
+        </div>
+      </div>
+
+      <!-- pure grid group -->
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="l-box">
+            <div class="description">
+              <h2>World GDP per capita</h2>
+              <p class="text-para">
+                This section explores the relationship between a countries
+                wealth and its energy consumption. Countries with higher GDP
+                such as the United States consume more electicity than lower GDP
+                countries such as India with a ratio of 12. To put in
+                perspective, the average Indian consumes the same amount of
+                electicity in a month than the average American does in a
+                Year.<br />
+                <br />Additionally, the poorest contries in the world consumed
+                so little energy that they were not included in the dataset. As
+                such, providing affordable energy is a key factor these
+                countries
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pure-u-1-2">
+          <div id="vis1" class="vis-container"></div>
+        </div>
+      </div>
+      <!-- end pure grid group -->
+
+      <!-- pure grid group -->
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div id="vis4"></div>
+        </div>
+        <div class="pure-u-1-2">
+          <div class="l-box">
+            <div class="description">
+              <h2>Low Energy Changes</h2>
+              <p class="text-para">
+                Several nations made significant
+                strides in transitioning to cleaner energy sources. China
+                maintained its position as the world's largest producer of low
+                carbon energy, driven by a robust renewable energy sector, while
+                the United States continued to expand its renewable capacity.
+                Europe, collectively, saw an impressive surge in low carbon
+                energy shares, with countries like Germany and Denmark leading
+                the charge with substantial investments in wind and solar power.
+                India accelerated its adoption of renewables, diversifying its
+                energy mix and reducing its reliance on coal.
+                
+                <br/><br/>Developing nations
+                in Africa also made notable advancements, emphasizing access to
+                sustainable energy sources. As nations worked towards reducing
+                their carbon footprints, global efforts in 2022 demonstrated a
+                shift towards a more sustainable and cleaner energy future.
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end pure grid group -->
+
+      <!-- end page -->
+      <!-- end pure grid group -->
+
+      <div class="pure-g">
+        <div class="pure-u-1-1 small-font">
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <!-- end page -->
+
+    <script type="text/javascript">
+      var specVis1 = "bubble_plot.vg.json";
+      var specVis2 = "energy_choropleth_map.vg.json";
+      var specVis3 = "line_graph.vg.json";
+      var specVis4 = "low_energy_map.vg.json";
+
+      vegaEmbed("#vis1", specVis1, { actions: false });
+
+      vegaEmbed("#vis2", specVis2, { actions: false })
+        .then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        })
+        .catch(console.error);
+
+      vegaEmbed("#vis3", specVis1, { actions: false })
+        .then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        })
+        .catch(console.error);
+
+      vegaEmbed("#vis4", specVis2, { actions: false })
+        .then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        })
+        .catch(console.error);
+
+      //Line graph
+      vegaEmbed("#line_graph", specVis3, { actions: false });
+      vegaEmbed("#vis3", specVis3, { actions: false })
+        .then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        })
+        .catch(console.error);
+      // end of line graph
+
+      //Low energy map
+      vegaEmbed("#choropleth_map", specVis4, { actions: false });
+      vegaEmbed("#vis4", specVis4, { actions: false })
+        .then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        })
+        .catch(console.error);
+      // end of line graph
+    </script>
+  </body>
+</html>

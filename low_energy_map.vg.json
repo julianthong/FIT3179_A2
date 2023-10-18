@@ -87,7 +87,8 @@
           {
             "field": "Electricity",
             "type": "quantitative",
-            "title": "Low-carbon Electricity (%)"
+            "title": "Low-carbon Electricity (%)",
+            "format": ".2f"
           }
         ]
       }

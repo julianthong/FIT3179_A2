@@ -60,7 +60,7 @@
         "radius": { "field": "value", "type": "quantitative" },
         "tooltip": [
           { "field": "key", "type": "nominal", "title": "Source" },
-          { "field": "value", "type": "quantitative", "title": "kWh per capita" }]
+          { "field": "value", "type": "quantitative", "title": "kWh per capita", "format": ".2f"}]
         }
       }
     ,

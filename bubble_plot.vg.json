@@ -53,14 +53,17 @@
         "tooltip": [
           { "field": "Country", "type": "nominal" },
           { "field": "Continent", "type": "nominal" },
-          { "field": "GDP per capita", "type": "quantitative" },
+          { "field": "GDP per capita", "type": "quantitative",
+          "format": ".2f" },
           {
             "field": "Energy use (kg of oil equivalent per capita)",
-            "type": "quantitative"
+            "type": "quantitative",
+            "format": ".2f"
           },
           {
             "field": "Population (historical estimates)",
-            "type": "quantitative"
+            "type": "quantitative",
+            "format": ".2f"
           }
         ]
       }

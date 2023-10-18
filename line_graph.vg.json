@@ -31,8 +31,8 @@
         },
         "tooltip": [
           { "field": "Year", "type": "temporal", "title": "Year" },
-          { "field": "TWh", "type": "quantitative", "title": "Total TWh" },
-          { "field": "Source", "type": "nominal", "title": "Source" }
+          { "field": "TWh", "type": "quantitative", "title": "Total TWh" ,"format": ".2f"},
+          { "field": "Source", "type": "nominal", "title": "Source","format": ".2f" }
         ],
         "legend": {
           "sort": { "field": "TWh", "order": "descending" }

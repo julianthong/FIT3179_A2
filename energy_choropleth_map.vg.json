@@ -13,13 +13,14 @@
   },
   "params": [
     {
-      "name": "Year: ",
+      "name": "Year_filter",
       "value": 1990,
       "bind": {
         "input": "range",
         "min": 1990,
         "max": 2022,
-        "step": 1
+        "step": 1,
+        "name": "Year: "
       }
     }
   ],
@@ -29,7 +30,8 @@
         {
           "calculate": "'Data is not available in ' + datum.properties.NAME",
           "as": "note"
-        }
+        },
+        {"filter": "datum.Year > Year_filter"}
       ],
       "mark": { "type": "geoshape", "fill": "lightgray", "stroke": "white" },
       "encoding": { "tooltip": { "field": "note" } }
